@@ -1,0 +1,92 @@
+<h2> Registration Form || Nested Form Group Example</h2>
+
+<!-- <div>
+    <form [formGroup]="userForm" (ngSubmit)="onformsubmit()">
+        
+        <div>
+            First name : <input type="text" placeholder="First Name" formControlName="fname">                           
+            
+            <label *ngIf="userForm.get('fname').invalid" >First Name Required</label>
+       
+        </div>
+
+        <div>
+           Last name : <input type="text" placeholder="Last Name" formControlName="lname">                           
+            
+            <label *ngIf="userForm.get('fname').invalid" >Last Name Required</label>
+       
+        </div>
+
+        <div>
+            House No : <input type="text" placeholder="houseno" formControlName="houseno">                           
+            
+            <label *ngIf="userForm.get('houseno').invalid" >houseno Required</label>
+       
+        </div>
+
+        <div>
+            City: <input type="text" placeholder="City" formControlName="city">                           
+            
+            <label *ngIf="userForm.get('city').invalid" >city Required</label>
+       
+        </div>
+
+        <div>
+            Pincode : <input type="text" placeholder="Enter Pincode" formControlName="pincode">                           
+            
+            <label *ngIf="userForm.get('pincode').invalid" >pincode Required</label>
+       
+        </div>
+
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+
+
+    </form>
+</div> -->
+
+
+<div>
+
+    <form [formGroup]="userForm" (ngSubmit)="onformsubmit()">
+
+        <div>
+            First name : <input type="text" placeholder="Enter Your First Name" formControlName="fname" />
+            <label *ngIf="userForm.get('fname').invalid">First Name is required !! </label>
+        </div>
+
+        <div>
+            Last name : <input type="text" placeholder="Enter Your last Name" formControlName="lname" />
+            <label *ngIf="userForm.get('lname').invalid">Last Name is required !! </label>
+        </div>
+
+
+        <div formGroupName="address">
+            <div>
+                House No : <input type="text" placeholder="Enter Your house no" formControlName="houseno" />
+                <label *ngIf="userForm.get('address').get('houseno').invalid">House no is required !! </label>
+            </div>
+            <div>
+                City : <input type="text" placeholder="Enter Your City Name" formControlName="city" />
+                <label *ngIf="userForm.get('address').get('city').invalid">City Name is required !! </label>
+            </div>
+            <div>
+                Pin Code : <input type="text" placeholder="Enter Your First Name" formControlName="pincode" />
+                <label *ngIf="userForm.get('address').get('pincode').invalid">pincode is required !! </label>
+            </div>
+        </div>
+
+
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+
+
+    </form>
+
+</div>
+
+
+
+

@@ -1,0 +1,79 @@
+<div>
+
+  <h2> Nested Form Array Example Adding Dynamic Controls</h2>
+
+  <form [formGroup]="regform">
+    <div formArrayName="details">
+      <div
+        *ngFor="let d of details; let i = index"
+        [formGroupName]="i"
+      >
+        <input
+          type="text"
+          placeholder="Enter Full Name"
+          formControlName="fullName"
+        />
+        &nbsp;
+  
+        <input
+          type="text"
+          placeholder="Enter Roll Number"
+          formControlName="rollNumber"
+        />
+        &nbsp;
+  
+        <input
+          type="text"
+          placeholder="Enter Class Details"
+          formControlName="class"
+        />&nbsp;
+  
+        <input
+          type="text"
+          placeholder="Enter Mobile Number"
+          formControlName="mobileno"
+        />&nbsp;
+  
+        <button
+          style="
+            background-color: #f44336;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            opacity: 0.9;
+          "
+          (click)="deleteRow(i)"
+        >
+          X
+        </button>
+      </div>
+    </div>
+
+    
+  </form>
+  
+  <br />
+  
+  <div>
+    <button
+      style="
+        background-color: #04aa6d;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        opacity: 0.9;
+      "
+      (click)="addcontrol()"
+    >
+      Add
+    </button>
+  </div>
+
+
+
+  </div>
+
+
+

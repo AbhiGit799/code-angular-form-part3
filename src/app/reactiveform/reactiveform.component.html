@@ -1,0 +1,31 @@
+<h2>Nested Form Array Example </h2>
+<div>
+  
+  <form [formGroup]="regForm" (ngSubmit)="register(regForm)">
+  
+  <div>
+
+            <div formArrayName="mobilenos">
+
+                <div *ngFor="let mobileno of regForm.get('mobilenos').controls; index as idx">
+                    Mobile No : <input type="text" placeholder="Enter Your Mobile no" [formControlName]="idx" />
+                    &nbsp;
+                    <button type="button" (click)="detelerow(idx)" class="button1">Delete</button>
+                </div>
+
+                <br>
+
+                <button type="button" (click)="addmore()" class="button2">Add more</button>
+            </div>
+
+   </div>
+
+   <br/><br/>
+   
+   <div>
+    <button type="submit">Register</button>
+  </div>
+      
+ </form>
+
+</div>
